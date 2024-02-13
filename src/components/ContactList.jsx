@@ -24,6 +24,7 @@ export default function ContactList() {
               setContacts(json);
               // console.log(contacts);           
           } catch (error) {
+            console.log(error);
           }
         }
     fetchContacts()
