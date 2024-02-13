@@ -10,7 +10,7 @@ const dummyContacts = [
     { id: 3, name: "BB-8", phone: "888-888-8888", email: "bb8@droids.com" },
   ];
 
-export default function ContactList() { 
+export default function ContactList({setSelectedContactId, contact}) { 
     const [contacts, setContacts] = useState(dummyContacts)
     // console.log("Contacts:", contacts);
     const dumb = (elem) => <ContactRow key={elem.id} firstIndex = {elem}/>
