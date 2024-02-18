@@ -20,8 +20,8 @@ export default function ContactList({setSelectedContactId, contact}) {
           try {
               const response = await fetch("https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users");
               const result = await response.json();  
-              setContacts(result);
-              console.log(contacts);           
+              setContacts(result); 
+              console.log(contacts);          
           } catch (error) {
             console.log(error);
           }
