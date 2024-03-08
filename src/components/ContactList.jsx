@@ -11,8 +11,8 @@ const dummyContacts = [
   ];
 
 export default function ContactList({setSelectedContactId, contact}) { 
-    const [contacts, setContacts] = useState(dummyContacts)
-    console.log("Contacts:", contacts);
+    const [contacts, setContacts] = useState([])
+    // console.log("Contacts:", contacts);
     // const dumb = (elem) => <ContactRow key={elem.id} contact = {elem}/>
 
     useEffect(()=> {
@@ -21,13 +21,12 @@ export default function ContactList({setSelectedContactId, contact}) {
               const response = await fetch("https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users");
               const result = await response.json();  
               setContacts(result); 
-              console.log(contacts);          
+              // console.log(contacts);          
           } catch (error) {
             console.log(error);
           }
         }
-    fetchContacts()
-    console.log(contacts);
+    fetchContacts();
     }, [])
 
   return ( 
@@ -44,6 +43,7 @@ export default function ContactList({setSelectedContactId, contact}) {
               <td>Phone</td>
             </tr>
             { contacts.map((contact) => {
+              //By fetching individual contact list by ID, we'll be adding an 
               return <ContactRow key={contact.id} contact={contact} />
             })
              }
