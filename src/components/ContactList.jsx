@@ -11,8 +11,8 @@ const dummyContacts = [
   ];
 
 export default function ContactList({setSelectedContactId, contact}) { 
-    const [contacts, setContacts] = useState([])
-    // console.log("Contacts:", contacts);
+    const [contacts, setContacts] = useState(dummyContacts)
+    console.log("Contacts:", contacts);
     // const dumb = (elem) => <ContactRow key={elem.id} contact = {elem}/>
 
     useEffect(()=> {
@@ -27,6 +27,7 @@ export default function ContactList({setSelectedContactId, contact}) {
           }
         }
     fetchContacts()
+    console.log(contacts);
     }, [])
 
   return ( 
