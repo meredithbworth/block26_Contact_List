@@ -44,7 +44,7 @@ export default function ContactList({setSelectedContactId, contact}) {
             </tr>
             { contacts.map((contact) => {
               //By fetching individual contact list by ID, we'll be adding an 
-              return <ContactRow key={contact.id} contact={contact} />
+              return <ContactRow key={contact.id} contact={contact} setSelectedContactId={setSelectedContactId}/>
             })
              }
           </tbody>
