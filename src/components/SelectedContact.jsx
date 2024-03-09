@@ -28,8 +28,7 @@ function SelectedContact({setSelectedContactId, selectedContactId}){
     contact.name ? ( <div>
         <h1>{contact.name}</h1>
     <p>Username: {contact.username}</p>
-    <p>Phone: {contact.phone}</p>
-    <p>Website: {contact.website}</p>
+    <p>Email: {contact.email}</p>
     <address>
         Address: <br></br>
 {/* Address's value is an object so we need to target the exact value. */}
@@ -38,6 +37,15 @@ function SelectedContact({setSelectedContactId, selectedContactId}){
         {contact.address.city}<br></br>
         {contact.address.zipcode}
     </address>
+    <p>Phone: {contact.phone}</p>
+    <p>Website: {contact.website}</p>
+    <p>
+        <h4>Company:</h4>
+{/* Address's value is an object so we need to target the exact value. */}
+        <p>Name: {contact.company.name} </p>
+        <p>Catch Phrase: {contact.company.catchPhrase}</p>
+        <p>Company Jibberish: {contact.company.bs}</p>
+    </p>
     <button onClick={()=>setSelectedContactId(null)}>Back to ContactList</button>
    </div>) : <div></div>
 )
