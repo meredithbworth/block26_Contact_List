@@ -14,6 +14,7 @@ function SelectedContact({setSelectedContactId, selectedContactId}){
             try {
                 const response = await fetch(`https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users/${selectedContactId}`);
                 const result = await response.json();
+//After we fetch our data we want to store it into our useState setContact(result)
                 setContact(result);
                 console.log(contact);
             } catch (error) {
@@ -22,11 +23,8 @@ function SelectedContact({setSelectedContactId, selectedContactId}){
         }
         getContact();
     }, [])
-
-//After we fetch our data we want to store it into our useState setContact(result)
+//In our return (render additional information for example: contact address, city, street and zipcode)
     return (
-
-//In our return ( render additional information for example contact address, city, street, and zipcode)
     contact.name ? ( <div>
         <h1>{contact.name}</h1>
     <p>Username: {contact.username}</p>
@@ -34,6 +32,7 @@ function SelectedContact({setSelectedContactId, selectedContactId}){
     <p>Website: {contact.website}</p>
     <address>
         Address: <br></br>
+{/* Address's value is an object so we need to target the exact value. */}
         {contact.address.street} <br></br>
         {contact.address.suite} <br></br>
         {contact.address.city}<br></br>
@@ -45,8 +44,7 @@ function SelectedContact({setSelectedContactId, selectedContactId}){
 // Address's value is an object so we need to target the exact value.
 //contact.address.city 
 //contact.address.zipcode
-/// Hint hint using a onClick () inside a button would help render each contact 
-// setSelectedContactID(null)
+/// Using a onClick () inside a button to render each contact 
 }
 
 export default SelectedContact
